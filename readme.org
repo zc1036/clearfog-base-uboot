@@ -105,6 +105,14 @@ You also have to modify include/linux/compiler-gcc.h and apply this diff:
 -- 
 #+END_SRC
 
+Without this mod you'll get errors like:
+
+#+BEGIN_SRC
+board.c:88:6: error: ‘coloured_LED_init’ aliased to external symbol ‘__coloured_LED_init’
+ void coloured_LED_init(void)
+      ^~~~~~~~~~~~~~~~~
+#+END_SRC
+
 Then run:
 
 #+BEGIN_SRC
@@ -112,5 +120,9 @@ git clone https://github.com/SolidRun/u-boot-armada38x.git
 cd u-boot-armada38x
 export CROSS_COMPILE=arm-linux-gnueabi-
 make armada_38x_clearfog_config
-make u-boot.mmc MV88F68XX=1 
+make u-boot.mmc
 #+END_SRC
+
+If you leave off the MV88F68XX=1 then you'll get the error:
+
+#+BEGIN_SRC

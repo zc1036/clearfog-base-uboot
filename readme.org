@@ -122,7 +122,3 @@ export CROSS_COMPILE=arm-linux-gnueabi-
 make armada_38x_clearfog_config
 make u-boot.mmc
 #+END_SRC
-
-If you leave off the MV88F68XX=1 then you'll get the error:
-
-#+BEGIN_SRC
